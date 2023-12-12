@@ -51,56 +51,68 @@ export default function NovaMusica() {
         <Link to="/EmDestaque">Em Destaque</Link>
       </nav>
 
-      <div>
+      <div style={{ margin: "20px", padding: "15px", border: "1px solid #ffb6c1", borderRadius: "5px" }}>
         <h2>Cadastrar Nova Música</h2>
         <form className="form" onSubmit={salvar}>
-          <label htmlFor="nomeMusica">Nome da Música:</label>
-          <input
-            type="text"
-            id="nomeMusica"
-            value={nomeMusica}
-            onChange={(e) => setNomeMusica(e.target.value)}
-          />
+          <div style={{ marginBottom: "10px" }}>
+            <label htmlFor="nomeMusica">Nome da Música:</label>
+            <input
+              type="text"
+              id="nomeMusica"
+              value={nomeMusica}
+              onChange={(e) => setNomeMusica(e.target.value)}
+            />
+          </div>
 
-          <label htmlFor="compositor">Compositor:</label>
-          <input
-            type="text"
-            id="compositor"
-            value={compositor}
-            onChange={(e) => setCompositor(e.target.value)}
-          />
+          <div style={{ marginBottom: "10px" }}>
+            <label htmlFor="compositor">Compositor:</label>
+            <input
+              type="text"
+              id="compositor"
+              value={compositor}
+              onChange={(e) => setCompositor(e.target.value)}
+            />
+          </div>
 
-          <label htmlFor="dataLancamento">Data de Lançamento:</label>
-          <input
-            type="date"
-            id="dataLancamento"
-            value={dataLancamento}
-            onChange={(e) => setDataLancamento(e.target.value)}
-          />
+          <div style={{ marginBottom: "10px" }}>
+            <label htmlFor="dataLancamento">Data de Lançamento:</label>
+            <input
+              type="date"
+              id="dataLancamento"
+              value={dataLancamento}
+              onChange={(e) => setDataLancamento(e.target.value)}
+            />
+          </div>
 
-          <label htmlFor="album">Álbum:</label>
-          <input
-            type="text"
-            id="album"
-            value={album}
-            onChange={(e) => setAlbum(e.target.value)}
-          />
+          <div style={{ marginBottom: "10px" }}>
+            <label htmlFor="album">Álbum:</label>
+            <input
+              type="text"
+              id="album"
+              value={album}
+              onChange={(e) => setAlbum(e.target.value)}
+            />
+          </div>
 
-          <label htmlFor="generoMusical">Gênero Musical:</label>
-          <input
-            type="text"
-            id="generoMusical"
-            value={generoMusical}
-            onChange={(e) => setGeneroMusical(e.target.value)}
-          />
+          <div style={{ marginBottom: "10px" }}>
+            <label htmlFor="generoMusical">Gênero Musical:</label>
+            <input
+              type="text"
+              id="generoMusical"
+              value={generoMusical}
+              onChange={(e) => setGeneroMusical(e.target.value)}
+            />
+          </div>
 
-          <label htmlFor="url">URL do Vídeo:</label>
-          <input
-            type="url"
-            id="url"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-          />
+          <div style={{ marginBottom: "10px" }}>
+            <label htmlFor="url">URL do Vídeo:</label>
+            <input
+              type="url"
+              id="url"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+            />
+          </div>
 
           <button className="btn btn-outline-dark" type="submit">
             Adicionar Música

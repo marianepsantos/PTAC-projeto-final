@@ -9,10 +9,7 @@ export default function EmDestaque() {
   return (
     <div>
       <Header />
-      <nav>
-        <Link to="/Home">Home</Link>
-        <Link to="/NovaMusica">Nova Música</Link>
-      </nav>
+      
       <Card lista={destaques} />
       {destaques.map((video) => (
         <Link key={video.id} to={`/Detalhe/${video.id}`}>
