@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function VideoCard({ lista }) {
   const cardStyle = {
@@ -17,14 +18,15 @@ export default function VideoCard({ lista }) {
     <div>
       {lista.map((video) => (
         <div style={cardStyle} key={video.id}>
-          <iframe
-            src={`https://www.youtube.com/embed/${video.url.slice(17)}`}
-            frameBorder="0"
-            title={video.nomeMusica}
-            width="100%" 
-            height="200px" 
-          ></iframe>
-          <p>{video.nomeMusica}</p>
+          <Link to={`./Detalhe/${video.id}`}>
+            <iframe
+              src={`https://www.youtube.com/embed/${video.url.slice(17)}`}
+              frameBorder="0"
+              title={video.nomeMusica}
+              width="100%" 
+            ></iframe>
+            <p>{video.nomeMusica}</p>
+          </Link>
         </div>
       ))}
     </div>

@@ -11,7 +11,7 @@ export default function DetalhesMusica() {
     <div>
       <Header />
       <h2>Detalhes da Música</h2>
-      <iframe src={`https://www.youtube.com/embed/${musica.url.slice(17)}`} frameBorder="0"></iframe>
+    
       <p>{musica.nomeMusica}</p>
       <p>Compositor: {musica.compositor}</p>
       <p>Data de Lançamento: {musica.dataLancamento}</p>
