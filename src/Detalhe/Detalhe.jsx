@@ -1,26 +1,22 @@
-import { Link } from "react-router-dom";
-import React from "react";
-import Header from "../Componentes/Header";
+import React from 'react';
+import Header from '../Componentes/Header';
+import { useParams } from 'react-router-dom';
 
-export default function Detalhe() {
+export default function DetalhesMusica() {
   const { id } = useParams();
-  const lista = JSON.parse(localStorage.getItem("Lista"));
-
-  const video = lista.find((objeto) => objeto.id === parseInt(id));
+  const lista = JSON.parse(localStorage.getItem('Lista')) || [];
+  const musica = lista.find((musica) => musica.id == id);
 
   return (
     <div>
       <Header />
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/NovaMusica">Nova Música</Link>
-      </nav>
-      <iframe src={`https://www.youtube.com/embed/${video.url.slice(17)}`} frameBorder="0"></iframe>
-      <p>{video.nomeMusica}</p>
-      <p>Compositor: {video.compositor}</p>
-      <p>Data de Lançamento: {video.dataLancamento}</p>
-      <p>Álbum: {video.album}</p>
-      <p>Gênero Musical: {video.generoMusical}</p>
+      <h2>Detalhes da Música</h2>
+      <iframe src={`https://www.youtube.com/embed/${musica.url.slice(17)}`} frameBorder="0"></iframe>
+      <p>{musica.nomeMusica}</p>
+      <p>Compositor: {musica.compositor}</p>
+      <p>Data de Lançamento: {musica.dataLancamento}</p>
+      <p>Álbum: {musica.album}</p>
+      <p>Gênero Musical: {musica.generoMusical}</p>
     </div>
   );
 }
