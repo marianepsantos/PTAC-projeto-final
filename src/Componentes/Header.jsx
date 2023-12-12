@@ -1,10 +1,24 @@
-import React from 'react'
-import Header from './Header/Header';
+import React from "react";
+import { Link } from "react-router-dom";
 
-<nav class="navbar">
-      <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Em Destaque</a></li>
-            <li><a href="#">Novo Vídeo</a></li>
-        </ul>
-    </nav>
+export default function Header() {
+  return (
+    <div>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="/">CantorFavorito Vídeos</a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div className="navbar-nav">
+              <Link to="/" className="nav-link active" aria-current="page">Home</Link>
+              <Link to="/NovaMusica" className="nav-link">Nova Música</Link>
+              <Link to="/EmDestaque" className="nav-link">Em Destaque</Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  );
+}

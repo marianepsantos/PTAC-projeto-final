@@ -1,14 +1,20 @@
-export default function Home(){
-    return (
-        <div>
-            <h1>Home</h1>
-            <Link to="/Home">Home</Link>
+import React from "react";
+import Header from "./Componentes/Header";
+import Card from "./Componentes/Card";
+import { Link } from "react-router-dom";
 
-            <h1>Em Destaque</h1>
-            <Link to="/EmDestaque">Em Destaque</Link>
+export default function Home() {
+  const lista = JSON.parse(localStorage.getItem("Lista"));
 
-            <h1>Novo Video</h1>
-            <Link to="/NovoVideo">Novo Video</Link>
-            </div>
-    );
+  return (
+    <div>
+      <Header />
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/EmDestaque">Em Destaque</Link>
+        <Link to="/NovaMusica">Nova Música</Link>
+      </nav>
+      <Card lista={lista} />
+    </div>
+  );
 }

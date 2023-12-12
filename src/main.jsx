@@ -1,18 +1,21 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './Home/Home';
-import EmDestaque from './EmDestaque/EmDestaque';
-import NovoVideo from './NovoVideo/NovoVideo';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React from 'react'; // Importe React uma vez
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+import Home from './Home';
+import EmDestaque from './EmDestaque/EmDestaque';
+import NovaMusica from './NovaMusica/NovaMusica';
+import Detalhe from './Detalhe/Detalhe';
+
+createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <BrowserRouter>
+    <BrowserRouter>
       <Routes>
-        <Route path="/Home" element={<Home />}></Route>
-        <Route path='/EmDestaque' element={<EmDestaque />}></Route>
-        <Route path='/NovoVideo' element={<NovoVideo />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/EmDestaque" element={<EmDestaque />} />
+        <Route path="/NovaMusica" element={<NovaMusica />} />
+        <Route path="/Detalhe/:id" element={<Detalhe />} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);
