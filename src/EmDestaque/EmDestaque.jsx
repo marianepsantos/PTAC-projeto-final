@@ -10,7 +10,7 @@ export default function EmDestaque() {
     <div>
       <Header />
       <nav>
-        <Link to="/">Home</Link>
+        <Link to="/Home">Home</Link>
         <Link to="/NovaMusica">Nova Música</Link>
       </nav>
       <Card lista={destaques} />
